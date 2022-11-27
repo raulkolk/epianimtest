@@ -145,9 +145,9 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </span></div> 
 
 
-<div class="badge centaur" onmouseenter="cleverSwap(this)" id="5">
+<div class="badge centaur play" onmouseenter="cleverSwap(this)" id="5">
 
-<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-centaur-still.svg" data-original-title="null" class="play has-tooltip">
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-centaur-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-centaur-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
@@ -187,9 +187,9 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </span></div> 
 
 
-<div class="badge centaur" onmouseenter="cleverSwap(this)" id="6">
+<div class="badge centaur play" onmouseenter="cleverSwap(this)" id="6">
 
-<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-pegasus-still.svg" data-original-title="null" class="play has-tooltip">
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-pegasus-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-pegasus-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
@@ -229,9 +229,9 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </span></div> 
 
 
-<div class="badge centaur" onmouseenter="cleverSwap(this)" id="7">
+<div class="badge centaur play" onmouseenter="cleverSwap(this)" id="7">
 
-<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-unicorn-still.svg" data-original-title="null" class="play has-tooltip">
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-unicorn-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-unicorn-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
@@ -272,9 +272,9 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
       </span></div> 
       
       
-      <div class="badge centaur" onmouseenter="cleverSwap(this)" id="0">
+      <div class="badge centaur play" onmouseenter="cleverSwap(this)" id="0">
         
-        <object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class="play has-tooltip">
+        <object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
         </object>
         <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
         </object>
@@ -312,9 +312,9 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </span></div> 
 
 
-<div class="badge centaur" onmouseenter="cleverSwap(this)" id="1">
+<div class="badge centaur play" onmouseenter="cleverSwap(this)" id="1">
 
-<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class="play has-tooltip">
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
@@ -472,17 +472,11 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 <script>
 
 
-
-
-
-
 	let prevent_swap = {}
 	
-	function cleverSwap(el, rec){ 
+	function cleverSwap(el, rec) { 
 
 		let svgs = el.getElementsByTagName('object')
-
-		console.log(svgs[0].data, svgs[1].data)
 
 		let A = svgs[0].style.display == 'none' ? 0 : 1     // || svgs[0].style.display == ''
 		let B = A ? 0 : 1
@@ -490,47 +484,34 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 		let badge_attrs_A = svgs[A].data.split('-').reverse()
 		let id = badge_attrs_A[1] + el.id
 
-
 		if(!(id in prevent_swap)) {
 			svgs[B].style.display = 'none'
 			svgs[A].data = svgs[A].data.replace('still.svg', 'anim.svg')
 		}
 		
-		if(prevent_swap[id]) {
-			//console.log(`Prevented ${id} swap`)
-			return
-		}
+		if(prevent_swap[id]) return
+
 		if(rec) svgs[A].style.display = 'inline'
 
-		
-		svgs[A].data = svgs[A].data.replace('none.svg', 'anim.svg')
+		setTimeout(_ => {
 
-		//svgs[A].onloaded = (_ => 
-			setTimeout(_ => {
+			if(rec) svgs[B].style.display = 'none'
+			svgs[B].data = svgs[B].data.replace('none.svg', 'anim.svg')
 
-				if(rec) svgs[B].style.display = 'none'
-				svgs[B].data = svgs[B].data.replace('none.svg', 'anim.svg')
+			prevent_swap[id] = true
+			setTimeout(_ => prevent_swap[id] = false, 2951)
 
-				prevent_swap[id] = true
-				//console.log(`Enabled ${id} swap lock`)
-
-				setTimeout(_ => {
-					prevent_swap[id] = false
-					//console.log(`Disabled ${id} swap lock`)
-				}, 2950)
-
-			}, rec ? 50 : 100)
-		//)()
+		}, rec ? 50 : 100)
 
 		rec || cleverSwap(el, true) // evil hack
 
-		//checkDisplay([...document.getElementsByTagName('object')])
+		// checkDisplay([...document.getElementsByTagName('object')])
 
 	}
 
 
 
-	setTimeout(() => [...document.getElementsByClassName('play')].forEach(el => cleverSwap(el.parentNode)), 500);
+	setTimeout(() => [...document.getElementsByClassName('play')].forEach(el => cleverSwap(el)), 50);
 
 
 
@@ -542,6 +523,7 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 	//    There's a 1/500 chance that both A and B get 'none' as display value.
 	//    This might be because the timing between rec = true and the standard function call hit a snag.
 	//    Checking for A == 'none' && B == 'none' in a changable way is a pain. 
+	//    Maybe rewriting in Vue.js can reveal a method without recursive function.
 	//
 	// ####################################################################################################
 
@@ -555,7 +537,7 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 		})
 	}
 
-	setInterval(() => checkDisplay([...document.getElementsByTagName('object')]), 2000)
+	//setInterval(() => checkDisplay([...document.getElementsByTagName('object')]), 2000)
 
 
 
@@ -575,6 +557,26 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 
 
 		## Bin ##
+
+
+				//svgs[A].data = svgs[A].data.replace('none.svg', 'anim.svg')
+
+		//svgs[A].onloaded = (_ => 
+			setTimeout(_ => {
+
+				if(rec) svgs[B].style.display = 'none'
+				svgs[B].data = svgs[B].data.replace('none.svg', 'anim.svg')
+
+				prevent_swap[id] = true
+				//console.log(`Enabled ${id} swap lock`)
+
+				setTimeout(_ => {
+					prevent_swap[id] = false
+					//console.log(`Disabled ${id} swap lock`)
+				}, 2950)
+
+			}, rec ? 50 : 100)
+		//)()
 
 
 
