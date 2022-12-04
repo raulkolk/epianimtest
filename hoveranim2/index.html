@@ -151,6 +151,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-centaur-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-centaur-still.svg" data-original-title="null" class=" has-tooltip">
+</object>
 
 </div> 
 
@@ -193,6 +195,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-pegasus-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-pegasus-still.svg" data-original-title="null" class=" has-tooltip">
+</object>
 
 </div> 
 
@@ -234,6 +238,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 <object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-unicorn-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-unicorn-none.svg" data-original-title="null" class=" has-tooltip">
+</object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-unicorn-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 
 </div> 
@@ -278,6 +284,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
         </object>
         <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
         </object>
+		<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
+		</object>
       
       </div> 
       
@@ -317,6 +325,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 <object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
+</object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 
 </div> 
@@ -360,6 +370,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
+</object>
 
 </div> 
 
@@ -402,6 +414,8 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
 </object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
+</object>
 
 </div> 
 
@@ -440,9 +454,11 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 
 <div class="badge centaur" onmouseenter="cleverSwap(this)" id="8">
 
-<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
+<object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 <object style="position:absolute; margin:-3%; display: none;" type="image/svg+xml" data="./badge-rat-none.svg" data-original-title="null" class=" has-tooltip">
+</object>
+<object style="position:absolute; margin:-3%;" type="image/svg+xml" data="./badge-rat-still.svg" data-original-title="null" class=" has-tooltip">
 </object>
 
 </div> 
@@ -472,6 +488,14 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 <script>
 
 
+	const myPromise = new Promise((resolve, reject) => {
+
+		resolve("foo")
+
+	})
+
+
+
 	let prevent_swap = {}
 	
 	function cleverSwap(el, rec) { 
@@ -488,7 +512,7 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 			svgs[B].style.display = 'none'
 			svgs[A].data = svgs[A].data.replace('still.svg', 'anim.svg')
 		}
-		
+
 		if(prevent_swap[id]) return
 
 		if(rec) svgs[A].style.display = 'inline'
@@ -497,13 +521,14 @@ C16.552,16,17,15.552,17,15z M10,14h6v1h-6V14z M13,11v-1c0-0.552-0.448-1-1-1H6c-0
 
 			if(rec) svgs[B].style.display = 'none'
 			svgs[B].data = svgs[B].data.replace('none.svg', 'anim.svg')
-
 			prevent_swap[id] = true
 			setTimeout(_ => prevent_swap[id] = false, 2951)
 
 		}, rec ? 50 : 100)
 
 		rec || cleverSwap(el, true) // evil hack
+
+		setTimeout(() => svgs[2].style.display = 'none', 150);
 
 		// checkDisplay([...document.getElementsByTagName('object')])
 
